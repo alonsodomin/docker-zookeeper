@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM java:7-jre
 
 MAINTAINER Antonio Alonso Dominguez <alonso@codenibbles.com>
 
@@ -10,8 +10,6 @@ RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-$ZOOKEEPER_V
     && mv /opt/zookeeper-$ZOOKEEPER_VERSION /opt/zookeeper \
     && cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg \
     && mkdir -p /var/lib/zookeeper
-
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
 EXPOSE 2181 2888 3888
 
